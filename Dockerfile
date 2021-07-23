@@ -1,3 +1,3 @@
 FROM alpine:latest
 
-CMD ["printf", "hello!"]
+CMD ["printf", "hello! again!"]
