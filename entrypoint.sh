@@ -1,3 +1,3 @@
-#!/bin/bash
+#!/bin/sh
 
-echo 'Hello from the entrypoint script!'
+echo 'Hello from the entrypoint script!  In mini alpine form'
