@@ -14,7 +14,7 @@
       "name": "hwtest",
       "portMappings": [
         {
-          "containerPort": 80,
+          "containerPort": 8040,
           "hostPort": 80,
           "protocol": "tcp"
         }
