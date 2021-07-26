@@ -34,4 +34,6 @@
 
 FROM alpine:latest
 
+COPY ./config-repo/entrypoint.sh ./
+
 ENTRYPOINT ["entrypoint.sh"]
