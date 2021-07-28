@@ -19,7 +19,7 @@ ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
 RUN useradd -m --shell /bin/false app
-RUN mkdir -p /edx/app/log/
+RUN mkdir -p /edx/app/log/ /edx/app/xqueue
 RUN touch /edx/app/log/edx.log /edx/app/xqueue/xqueue_cfg.yml
 RUN chown app:app /edx/app/log/edx.log /edx/app/xqueue/xqueue_cfg.yml
 
