@@ -10,6 +10,14 @@
       ],
       "essential": true,
       "image": "###IMAGE###",
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "hw-ecr",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "hello"
+        }
+      },
       "memory": 512,
       "name": "hwtest",
       "portMappings": [
