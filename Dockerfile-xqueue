@@ -6,7 +6,7 @@ ARG config_dir
 RUN apt update && \
   apt-get install -y software-properties-common && \
   apt-add-repository -y ppa:deadsnakes/ppa && apt-get update && \
-  apt-get install git-core language-pack-en python3-pip libmysqlclient-dev ntp libssl-dev python3.8-dev python3.8-venv -qy && \
+  apt-get install git-core language-pack-en python3-pip libmysqlclient-dev ntp libssl-dev python3.8-dev python3.8-venv python3-wheel -qy && \
   rm -rf /var/lib/apt/lists/*
 
 ENV VIRTUAL_ENV=/venv
@@ -20,8 +20,8 @@ ENV LC_ALL en_US.UTF-8
 
 RUN useradd -m --shell /bin/false app
 RUN mkdir -p /edx/app/log/
-RUN touch /edx/app/log/edx.log
-RUN chown app:app /edx/app/log/edx.log
+RUN touch /edx/app/log/edx.log /edx/app/xqueue/xqueue_cfg.yml
+RUN chown app:app /edx/app/log/edx.log /edx/app/xqueue/xqueue_cfg.yml
 
 WORKDIR /edx/app/xqueue
 COPY ${app_dir}/requirements /edx/app/xqueue/requirements
@@ -35,4 +35,5 @@ EXPOSE 8040
 COPY ${app_dir} /edx/app/xqueue
 COPY ./${config_dir}/entrypoint.sh ./
 
+ENV XQUEUE_CFG=/edx/app/xqueue/xqueue_cfg.yml
 ENTRYPOINT ["/edx/app/xqueue/entrypoint.sh"]
