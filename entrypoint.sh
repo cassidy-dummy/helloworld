@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -eux
+
 export DJANGO_SETTINGS_MODULE=xqueue.production
 export XQUEUE_CFG=/edx/app/xqueue/xqueue_cfg.yml
 
