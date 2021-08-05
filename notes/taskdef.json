@@ -7,9 +7,9 @@
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
-          "awslogs-group": "hw-ecr",
+          "awslogs-group": "ecr",
           "awslogs-region": "us-east-1",
-          "awslogs-stream-prefix": "hello"
+          "awslogs-stream-prefix": "notes"
         }
       },
       "memory": 512,
